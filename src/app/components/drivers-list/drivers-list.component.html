@@ -1,0 +1,23 @@
+<div class="flex flex-column">
+    <div>Drivers List</div>
+    <div class="d-flex flex-column" *ngIf="drivers; else spinner">
+        <ng-container *ngIf="drivers.length === 0; else list">
+            No driver found
+        </ng-container>
+        <ng-template #list>
+        <div class="d-flex flex-column border rounded p-2 my-2 driver-box" *ngFor="let driver of drivers; let i = index;" (click)="setSelectedDriver(driver); driverDetailModalComponent.open()">
+                <div>
+                    Name: {{driver.driverName}}
+                </div>
+                <div>
+                    Phone Number: {{driver.driverPhone}}
+                </div>
+            </div>
+        </ng-template>
+    </div>
+</div>
+<ng-template #spinner>
+    <app-spinner></app-spinner>
+</ng-template>
+<app-driver-detail-modal></app-driver-detail-modal>
+

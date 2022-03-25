@@ -1,0 +1,9 @@
+.driver-box {
+    width: 500px;
+    > div {
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        width: 100%;
+        overflow: hidden;
+    }
+}

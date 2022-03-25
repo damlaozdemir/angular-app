@@ -1,0 +1,39 @@
+<ng-template #content let-modal>
+    <ng-container *ngIf="driver">
+        <div class="modal-header">
+            <h4 class="modal-title" id="modal-basic-title">Driver Details</h4>
+            <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss()"></button>
+        </div>
+        <div class="modal-body">
+            <div class="d-flex flex-column">
+                <div>
+                    Name: {{driver.driverName}}
+                </div>
+                <div>
+                    City: {{driver.driverCityOrigin}}
+                </div>
+                <div>
+                    Phone: {{driver.driverPhone}}
+                </div>
+                <div>
+                    Gender: {{driver.driverGender}}
+                </div>
+                <div>
+                    Info: {{driver.driverInfo}}
+                </div>
+                <div>
+                    Car: {{driver.carMake}}
+                </div>
+                <div>
+                    Km: {{driver.kmDriven}}
+                </div>
+                <div>
+                    Location: {{driver.location[0]}} - {{driver.location[1]}}
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-outline-dark" (click)="modal.close()">Close</button>
+        </div>
+    </ng-container>
+</ng-template>
